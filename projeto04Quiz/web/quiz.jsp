@@ -15,28 +15,35 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <%if (request.getParameter("enviar_quiz") != null){
+        <%  int roda = 0;
+            if (request.getParameter("enviar_quiz") != null){
             int cont = 0;
             for (Questão q: DbQuiz.getTeste()){
                 String respostaUsuario = request.getParameter(q.getQuestão());
-                if (respostaUsuario.equals(q.getResposta())){
-                    cont++;
+                if (respostaUsuario != null){
+                    if (respostaUsuario.equals(q.getResposta())){
+                        cont+=5;
+                    }
                 }
             }%>
         <hr><hr>
         <h1>
-            Pontuação: <%= 100*((double)(cont)/10.0)  %>
+            Pontuação: <%= cont/10  %>
         </h1>        
         <% } %>
         <h2>Quiz</h2>
         <form>
-            <% for(Questão q: DbQuiz.getTeste()){ %>
+            <%  roda = 0;
+                for(Questão q: DbQuiz.getTeste()){ %>
+                <% if (roda++ < 10){ %>
+                <%= roda %>
                 <h3>Questão: <%= q.getQuestão() %></h3>
                 <% for(int i = 0; i< q.getAlternativa().length; i++) {%>
-                <input type="radio" name="<%= q.getQuestão()%>" value="<%= q.getAlternativa()[i]%>">
+                <input type="radio" name="<%= q.getQuestão()%>" value="<%= q.getAlternativa()[i]%>" required="">
                 <%= q.getAlternativa()[i] %>
                 <% } %>
-                <hr>
+                <hr> 
+                <% } %>
             <% } %>
             <input type="submit" name="enviar_quiz" value="Enviar"> 
             <a href="home.jsp" role="button" >Voltar</a>
