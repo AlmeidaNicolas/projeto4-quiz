@@ -6,6 +6,7 @@
 package br.com.fatecpg.quiz;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -24,6 +25,29 @@ public class DbQuiz {
         teste.add(new Questão("", "", new String[] {"", "", ""}));
         teste.add(new Questão("", "", new String[] {"", "", ""}));
         teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        teste.add(new Questão("", "", new String[] {"", "", ""}));
+        
+        Collections.shuffle(teste);        
+        
         return teste;
     }
 }
