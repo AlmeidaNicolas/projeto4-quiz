@@ -12,6 +12,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Quiz</title>
+    <a href="deslogar.jsp">
+                <button>Sair da conta</button>
+        </a>
     </head>
     <body>
         <h1>Hello World!</h1>

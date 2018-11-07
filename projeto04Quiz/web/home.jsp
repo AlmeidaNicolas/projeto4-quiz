@@ -13,10 +13,23 @@
     </head>
     <body>
         <h1>Quiz</h1>
-        Bem vindo ao site de testes!
+        
+        <%
+            String usuario = (String)session.getAttribute("usuario");
+            if (usuario == null){
+                response.sendRedirect("login.jsp");
+            }else{
+        out.println("<h2>Bem Vindo ao Site de Teste!</h2>");
+            }
+            %>
         <h3>
             <a href="quiz.jsp">
                 <button>Realizar teste</button>
+            </a>
+            
+            
+           <br/><br/> <a href="deslogar.jsp">
+                <button>Sair da conta</button>
             </a>
         </h3>
     </body>
