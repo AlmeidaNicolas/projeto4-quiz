@@ -14,8 +14,10 @@ import java.util.Collections;
  */
 public class DbQuiz {
     
+    
+    public static final ArrayList<Usuário> usuario = new ArrayList<>();
+    
     public static ArrayList<Usuário> getNomeUsuario(){
-        ArrayList<Usuário> usuario = new ArrayList<>();
         usuario.add(new Usuário("reginaldo", "regi123naldo"));
         usuario.add(new Usuário("machado", "deassis"));
         usuario.add(new Usuário("maria", "1992"));

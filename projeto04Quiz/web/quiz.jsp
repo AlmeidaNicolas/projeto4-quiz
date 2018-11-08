@@ -30,7 +30,7 @@
             }%>
         <hr>
             <h1>
-                Pontuação: <%= cont %>/<%= cont*2 %>
+                Pontuação: <%= cont %>/100
             </h1>
         <hr>        
         <% } %>
@@ -43,7 +43,7 @@
                 <% for(int i = 0; i< q.getAlternativa().length; i++) {%>
                 <input type="radio" name="<%= q.getQuestão()%>" value="<%= q.getAlternativa()[i]%>" required="">
                 <%= q.getAlternativa()[i] %>
-                
+                <br>
                 <% } %>
                 <hr> 
                 <% } %>

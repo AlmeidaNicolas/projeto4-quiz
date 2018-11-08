@@ -23,10 +23,11 @@
         <%
         if(request.getParameter("enviar") != null){
         String usuario = request.getParameter("usuario");
+        String senha = request.getParameter("senha");
         boolean a = false;
         
         for(Usuário u: DbQuiz.getNomeUsuario()){
-            if(usuario == u.getNome()){
+            if(u.getNome().equals(usuario) && u.getSenha().equals(senha)){
                 a = true;
             }
         }
