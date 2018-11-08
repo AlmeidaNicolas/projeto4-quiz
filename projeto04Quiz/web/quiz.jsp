@@ -17,7 +17,6 @@
         </a>
     </head>
     <body>
-        <h1>Hello World!</h1>
         <%  int roda = 0;
             if (request.getParameter("enviar_quiz") != null){
             int cont = 0;
@@ -25,25 +24,26 @@
                 String respostaUsuario = request.getParameter(q.getQuestão());
                 if (respostaUsuario != null){
                     if (respostaUsuario.equals(q.getResposta())){
-                        cont+=5;
+                        cont+=10;
                     }
                 }
             }%>
-        <hr><hr>
-        <h1>
-            Pontuação: <%= cont/10  %>
-        </h1>        
+        <hr>
+            <h1>
+                Pontuação: <%= cont %>/<%= cont*2 %>
+            </h1>
+        <hr>        
         <% } %>
         <h2>Quiz</h2>
         <form>
             <%  roda = 0;
                 for(Questão q: DbQuiz.getTeste()){ %>
                 <% if (roda++ < 10){ %>
-                <%= roda %>
-                <h3>Questão: <%= q.getQuestão() %></h3>
+                <h3>Questão <%= roda %>: <%= q.getQuestão() %></h3>
                 <% for(int i = 0; i< q.getAlternativa().length; i++) {%>
                 <input type="radio" name="<%= q.getQuestão()%>" value="<%= q.getAlternativa()[i]%>" required="">
                 <%= q.getAlternativa()[i] %>
+                
                 <% } %>
                 <hr> 
                 <% } %>
