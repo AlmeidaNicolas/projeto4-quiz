@@ -5,6 +5,9 @@
  */
 package br.com.fatecpg.quiz;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 
 /**
@@ -46,5 +49,33 @@ public class Historico {
         this.partida = partida;
     }
 
+    public static ArrayList<Historico> ordenarData(ArrayList<Historico> historicos){
+        Collections.sort(historicos, new Comparator<Historico>() {
+            @Override
+            public int compare(Historico h1, Historico h2) {
+                if (h1.getPartida().after(h2.getPartida())) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }
+        });    
+        return historicos;
+    }
     
+    public static ArrayList<Historico> ordenarPontuacao(ArrayList<Historico> historicos){
+        Collections.sort(historicos, new Comparator<Historico>() {
+            @Override
+            public int compare(Historico h1, Historico h2) {
+                if (h1.getPontuacao() > h2.getPontuacao()) {
+                    return -1;
+                } else if (h1.getPontuacao() == h2.getPontuacao()) {
+                    return 0;
+                } else {
+                    return 1;
+                }
+            }
+        });    
+        return historicos;
+    }
 }

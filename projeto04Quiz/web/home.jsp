@@ -35,13 +35,17 @@
                     <th>Data</th>
                 </tr>
                 
-                    <% for(Historico h: DbQuiz.getHistorico()){%>
+                <% for(Historico h: Historico.ordenarData(DbQuiz.getHistorico())){
+                    
+                    //Tem-se a outra tabela apenas ao retirar o if
+                    if(h.getUsuario().equals(usuario)){%>                    
                     <tr>
                         <td><%= h.getUsuario()%></td>
                         <td><%= h.getPontuacao()%></td>
                         <td><%= df.format(h.getPartida())%></td>
                     </tr>                        
-                    <%} %>
+                    <%}
+                } %>
                 
             </table>
             
