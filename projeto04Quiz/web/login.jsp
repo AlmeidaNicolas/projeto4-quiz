@@ -4,6 +4,8 @@
     Author     : MARIA
 --%>
 
+<%@page import="br.com.fatecpg.quiz.DbQuiz"%>
+<%@page import="br.com.fatecpg.quiz.Usuário"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,12 +22,19 @@
     </form>
         <%
         String usuario = request.getParameter("usuario");
-        String senha = request.getParameter("senha");
         
-        if(usuario != null && senha != null && !usuario.isEmpty() && !senha.isEmpty()){
+        for(Usuário u: DbQuiz.getNomeUsuario()){
+            if(usuario == u.getNome()){
             session.setAttribute("usuario", usuario);
             response.sendRedirect("home.jsp");
         }
+            else{       
+                response.sendRedirect("login.jsp");
+            }
+
         %>
+        }
+        
+        
     </body>
 </html>
