@@ -18,23 +18,28 @@
     <form action ="login.jsp" method="post">
         Usuario:<br/> <input type="text" name="usuario"/><br/>
         Senha:<br/> <input type="password" name="senha"/><br/>
-        <br/> <input type="submit" value="Logar" /><br/>
+        <br/> <input type="submit" name="enviar" value="Logar" /><br/>
     </form>
         <%
+        if(request.getParameter("enviar") != null){
         String usuario = request.getParameter("usuario");
+        boolean a = false;
         
         for(Usuário u: DbQuiz.getNomeUsuario()){
             if(usuario == u.getNome()){
+                a = true;
+            }
+        }
+        
+        if(a == true){
             session.setAttribute("usuario", usuario);
             response.sendRedirect("home.jsp");
         }
-            else{       
-                response.sendRedirect("login.jsp");
+        else{
+            response.sendRedirect("login.jsp");
             }
-
-        %>
         }
-        
+        %>
         
     </body>
 </html>
