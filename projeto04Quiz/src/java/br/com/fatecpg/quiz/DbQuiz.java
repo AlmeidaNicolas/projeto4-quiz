@@ -6,6 +6,7 @@
 package br.com.fatecpg.quiz;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 
 /**
@@ -14,21 +15,51 @@ import java.util.Collections;
  */
 public class DbQuiz {
     
-    
-    public static final ArrayList<Usuário> usuario = new ArrayList<>();
-    
-    public static ArrayList<Usuário> getNomeUsuario(){
-        usuario.add(new Usuário("reginaldo", "regi123naldo"));
-        usuario.add(new Usuário("machado", "deassis"));
-        usuario.add(new Usuário("maria", "1992"));
-        usuario.add(new Usuário("lucas", "ter92015"));
-        usuario.add(new Usuário("timoteo", "timao2012"));
-        usuario.add(new Usuário("anderson", "vampeta"));
-        usuario.add(new Usuário("wesker", "tvirus"));
-        usuario.add(new Usuário("geralt", "essidarven"));
-        usuario.add(new Usuário("mateus", "ondona"));
-        usuario.add(new Usuário("carlos", "alberto"));
+    public static final ArrayList<Historico> hist = new ArrayList<>();
+    public static ArrayList<Historico> getHistorico(){
+        Calendar data = Calendar.getInstance();
+        if(hist.isEmpty()){
+            data.set(2018, 11, 8, 16, 19);
+            hist.add(new Historico("reginaldo", 100, data.getTime()));
+            data.set(2017, 10, 5, 10, 00);
+            hist.add(new Historico("machado", 30, data.getTime()));
+            data.set(2018, 9, 3, 19, 19);
+            hist.add(new Historico("maria", 10, data.getTime()));
+            data.set(2018, 7, 28, 23, 55);
+            hist.add(new Historico("lucas", 50, data.getTime()));
+            data.set(2016, 5, 29, 14, 29);
+            hist.add(new Historico("timoteo", 90, data.getTime()));
+            data.set(2010, 11, 8, 16, 19);
+            hist.add(new Historico("anderson", 80, data.getTime()));
+            data.set(2018, 1, 31, 00, 10);
+            hist.add(new Historico("wesker", 60, data.getTime()));
+            data.set(2018, 2, 26, 15, 20);
+            hist.add(new Historico("geralt", 40, data.getTime()));
+            data.set(2018, 4, 30, 12, 00);
+            hist.add(new Historico("mateus", 100, data.getTime()));
+            data.set(2018, 3, 20, 9, 30);
+            hist.add(new Historico("carlos", 30, data.getTime()));
+        }
         
+        return hist;
+    }
+    
+    
+    public static final ArrayList<Usuário> usuario = new ArrayList<>();        
+    public static ArrayList<Usuário> getNomeUsuario(){
+        if(usuario.isEmpty()){
+            usuario.add(new Usuário("reginaldo", "regi123naldo"));
+            usuario.add(new Usuário("machado", "deassis"));
+            usuario.add(new Usuário("maria", "1992"));
+            usuario.add(new Usuário("lucas", "ter92015"));
+            usuario.add(new Usuário("timoteo", "timao2012"));
+            usuario.add(new Usuário("anderson", "vampeta"));
+            usuario.add(new Usuário("wesker", "tvirus"));
+            usuario.add(new Usuário("geralt", "essidarven"));
+            usuario.add(new Usuário("mateus", "ondona"));
+            usuario.add(new Usuário("carlos", "alberto"));
+                
+        }
         return usuario;
     }
     

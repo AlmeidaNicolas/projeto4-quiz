@@ -5,6 +5,8 @@
  */
 package br.com.fatecpg.quiz;
 
+import java.util.Date;
+
 /**
  *
  * @author NicolasAlmeida <almeidanicolas110@gmail.com>
@@ -12,10 +14,12 @@ package br.com.fatecpg.quiz;
 public class Historico {
     private String usuario;
     private int pontuacao;
+    private Date partida;
 
-    public Historico(String usuario, int pontuacao) {
+    public Historico(String usuario, int pontuacao, Date partida) {
         this.usuario = usuario;
         this.pontuacao = pontuacao;
+        this.partida = partida;
     }    
     
     public String getUsuario() {
@@ -33,6 +37,14 @@ public class Historico {
     public void setPontuacao(int pontuacao) {
         this.pontuacao = pontuacao;
     }
-       
+
+    public Date getPartida() {
+        return partida;
+    }
+
+    public void setPartida(Date partida) {
+        this.partida = partida;
+    }
+
     
 }

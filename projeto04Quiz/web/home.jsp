@@ -4,6 +4,10 @@
     Author     : Hillo
 --%>
 
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.text.DateFormat"%>
+<%@page import="br.com.fatecpg.quiz.DbQuiz"%>
+<%@page import="br.com.fatecpg.quiz.Historico"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,15 +20,34 @@
         
         <%
             String usuario = (String)session.getAttribute("usuario");
+            DateFormat df = new SimpleDateFormat("dd/MM/yyyy | HH:mm");
             if (usuario == null){
                 response.sendRedirect("login.jsp");
             }else{
         out.println("<h2>Bem Vindo ao Site de Teste!</h2>");
             }
             %>
+            
+            <table border="1">
+                <tr>
+                    <th>Usuário</th>
+                    <th>Pontuação</th>
+                    <th>Data</th>
+                </tr>
+                
+                    <% for(Historico h: DbQuiz.getHistorico()){%>
+                    <tr>
+                        <td><%= h.getUsuario()%></td>
+                        <td><%= h.getPontuacao()%></td>
+                        <td><%= df.format(h.getPartida())%></td>
+                    </tr>                        
+                    <%} %>
+                
+            </table>
+            
         <h3>
             <a href="quiz.jsp">
-                <button>Realizar teste</button>
+                <button>Realizar teste</button> 
             </a>
             
             
