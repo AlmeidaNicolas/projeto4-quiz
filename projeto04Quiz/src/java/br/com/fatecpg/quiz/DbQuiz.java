@@ -48,16 +48,17 @@ public class DbQuiz {
     public static final ArrayList<Usuário> usuario = new ArrayList<>();        
     public static ArrayList<Usuário> getNomeUsuario(){
         if(usuario.isEmpty()){
-            usuario.add(new Usuário("reginaldo", "regi123naldo"));
-            usuario.add(new Usuário("machado", "deassis"));
-            usuario.add(new Usuário("maria", "1992"));
-            usuario.add(new Usuário("lucas", "ter92015"));
-            usuario.add(new Usuário("timoteo", "timao2012"));
-            usuario.add(new Usuário("anderson", "vampeta"));
-            usuario.add(new Usuário("wesker", "tvirus"));
-            usuario.add(new Usuário("geralt", "essidarven"));
-            usuario.add(new Usuário("mateus", "ondona"));
-            usuario.add(new Usuário("carlos", "alberto"));
+            usuario.add(new Usuário("reginaldo", "123"));
+            usuario.add(new Usuário("machado", "123"));
+            usuario.add(new Usuário("maria", "123"));
+            usuario.add(new Usuário("lucas", "123"));
+            usuario.add(new Usuário("timoteo", "123"));
+            usuario.add(new Usuário("anderson", "123"));
+            usuario.add(new Usuário("wesker", "123"));
+            usuario.add(new Usuário("geralt", "123"));
+            usuario.add(new Usuário("mateus", "123"));
+            usuario.add(new Usuário("carlos", "123"
+            ));
                 
         }
         return usuario;

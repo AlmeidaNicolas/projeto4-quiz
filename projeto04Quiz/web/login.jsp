@@ -4,14 +4,17 @@
     Author     : MARIA
 --%>
 
+<%@page import="java.text.DateFormat"%>
+<%@page import="br.com.fatecpg.quiz.Historico"%>
 <%@page import="br.com.fatecpg.quiz.DbQuiz"%>
 <%@page import="br.com.fatecpg.quiz.Usuário"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+        <link href="css/estilo.css" rel="stylesheet">
+        <title>Login</title>        
     </head>
     <body>
         
@@ -42,5 +45,6 @@
         }
         %>
         
+
     </body>
 </html>

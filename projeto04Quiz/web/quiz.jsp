@@ -12,10 +12,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+        <link href="css/estilo.css" rel="stylesheet">
         <title>Quiz</title>
     <a href="deslogar.jsp">
-                <button>Sair da conta</button>
+                <button>Sair</button>
         </a>
     </head>
     <body>
@@ -62,8 +63,8 @@
                 <hr> 
                 <% } %>
             <% } %>
+            <a href="home.jsp"><button>Voltar</button></a>
             <input type="submit" name="enviar_quiz" value="Enviar"> 
-            <a href="home.jsp" role="button" >Voltar</a>
         </form>
     </body>
 </html>

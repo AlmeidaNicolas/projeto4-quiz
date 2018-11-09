@@ -11,9 +11,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Web - 26/10</title>
+    <head>           
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+        <link href="css/estilo.css" rel="stylesheet">
+        <title>Quiz</title>
     </head>
     <body>
         <h1>Quiz</h1>
@@ -28,6 +29,7 @@
             }
             %>
             
+            <h3>Últimas partidas do usuário</h3>
             <table border="1">
                 <tr>
                     <th>Usuário</th>
@@ -46,18 +48,33 @@
                     </tr>                        
                     <%}
                 } %>
+            </table>
+                <h3>Ranking de melhores jogadores</h3>
+                <table border="1">
+                <tr>
+                    <th>Usuário</th>
+                    <th>Pontuação</th>
+                    <th>Data</th>
+                </tr>
+                <% for(Historico s: Historico.ordenarPontuacao(DbQuiz.getHistorico())){%>
+                        <td><%= s.getUsuario() %></td>
+                        <td><%= s.getPontuacao()%></td>
+                        <td><%= df.format(s.getPartida())%></td>
+                    </tr>                        
+                <%}
+                %>
+                
                 
             </table>
             
         <h3>
+            <a href="deslogar.jsp">
+                <button>Sair da conta</button>
+            </a>
             <a href="quiz.jsp">
                 <button>Realizar teste</button> 
             </a>
             
-            
-           <br/><br/> <a href="deslogar.jsp">
-                <button>Sair da conta</button>
-            </a>
         </h3>
     </body>
 </html>
